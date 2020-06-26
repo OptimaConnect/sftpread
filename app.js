@@ -52,7 +52,8 @@ app.get('/readFtpFolder/:enviro/:interface/:folder', function(req, res) {
 		host: marketingCloud.sftpUrl,
 		port: marketingCloud.sftpPort,
 		username: marketingCloud.sftpUser,
-		password: marketingCloud.sftpPassword
+		password: marketingCloud.sftpPassword,
+		readyTimeout: 30000
 	}).then(() => {
 		return sftp.list("/Export/" + req.params.enviro + "/" + req.params.interface + "/" + req.params.folder);
 	}).then(response => {
