@@ -45,7 +45,7 @@ app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/readFtpFolder/:enviro/:interface/:folder', function(req, res) {
 
-	//res.send("Enviro is " + req.params.enviro + " | Interface is " + req.params.interface + " | Folder is " + req.params.folder);
+	console.log(`Enviro is ${req.params.enviro} | Interface is ${req.params.interface} | Folder is ${req.params.folder}`);
 
 	// access SFTP site
 	sftp.connect({
